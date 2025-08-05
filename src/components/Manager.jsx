@@ -17,7 +17,7 @@ function Manager() {
     const [editId, setEditId] = useState(null)
     useEffect(() => {
         const fetchPass = async () => {
-            let res = await fetch('http://localhost:3000/api/password/get')
+            let res = await fetch('https://pass-backend-xny5.onrender.com/api/password/get')
             const data = await res.json()
             console.log(data)
             const formattedData = data.map(item => ({
@@ -36,12 +36,12 @@ function Manager() {
     }, [])
 
     const showPass = () => {
-        if (ref.current.src.includes("/Eye1.png")) {
-            ref.current.src = "/EyeCross5.png"
+        if (ref.current.src.includes("/Password-Manager/Eye1.png")) {
+            ref.current.src = "/Password-Manager/EyeCross5.png"
             passRef.current.type = "text"
 
         } else {
-            ref.current.src = "/Eye1.png"
+            ref.current.src = "/Password-Manager/Eye1.png"
             passRef.current.type = "password"
 
         }
@@ -59,7 +59,7 @@ function Manager() {
             if (form.url.length >= 3 && form.user.length >= 3 && form.pass.length >= 3) {
                 if (editId) {
                     console.log("id is",editId)
-                const res =  await fetch('http://localhost:3000/api/password/addbyid', {
+                const res =  await fetch('https://pass-backend-xny5.onrender.com/api/password/addbyid', {
                         method: "PUT",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({...form,id:editId})
@@ -73,7 +73,7 @@ function Manager() {
 
                 }
                 } else {
-                    let data = await fetch('http://localhost:3000/api/password/add', {
+                    let data = await fetch('https://pass-backend-xny5.onrender.com/api/password/add', {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify(form)
@@ -131,7 +131,7 @@ function Manager() {
         let c = confirm("do you want to delete this password")
         if (c) {
             console.log("deleting id:", id)
-           const response= await fetch('http://localhost:3000/api/password/delete',{
+           const response= await fetch('https://pass-backend-xny5.onrender.com/api/password/delete',{
             method:"DELETE",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({id})
@@ -208,7 +208,7 @@ function Manager() {
                         <input placeholder='Enter Username ' value={form.user} onChange={handleChange} className='w-full rounded-full px-2 py-1 border border-teal-700 ' type="text" name="user" />
                         <div className='relative'>
                             <input ref={passRef} placeholder='Enter Password' value={form.pass} onChange={handleChange} className='w-full rounded-full px-2 py-1 border border-teal-700 ' id='pass' type="password" name="pass" />
-                            <div className="absolute right-2 top-2"><img ref={ref} className='w-4 cursor-pointer' onClick={showPass} src="/Eye1.png" alt="Eye" /></div>
+                            <div className="absolute right-2 top-2"><img ref={ref} className='w-4 cursor-pointer' onClick={showPass} src="/Password-Manager/Eye1.png" alt="Eye" /></div>
                         </div>
                     </div>
                     <div className='mx-2 my-4 flex justify-center items-center'>
