@@ -9,7 +9,7 @@ function Footer() {
                 <span className='text-green-400 text-lg font-bold'  >OP/&gt;</span>
             </div>
             <div className=" desc text-white">
-               <span className='flex'>created with <img className='w-8' src="/Password-Manager/Heart.png" alt="heart" />By Azz</span> 
+               <span className='flex'>created with <img className='w-8' src="/Heart.png" alt="heart" />By Azz</span> 
             </div>
         </div>
     )
