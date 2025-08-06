@@ -150,7 +150,7 @@ function Manager() {
 
     const copyText = (text) => {
         navigator.clipboard.writeText(text)
-        console.log("copied", text)
+        console.log("copied text", text)
         toast('text copied to Clipboard', {
             position: "bottom-right",
             autoClose: 5000,
@@ -206,7 +206,7 @@ function Manager() {
                     </div>
                     <div className='py-3 flex flex-col md:flex-row gap-4 px-2 w-[100%]' >
                         <input placeholder='Enter Username ' value={form.user} onChange={handleChange} className='w-full rounded-full px-2 py-1 border border-teal-700 ' type="text" name="user" />
-                        <div className='relative'>
+                        <div className='relative '>
                             <input ref={passRef} placeholder='Enter Password' value={form.pass} onChange={handleChange} className='w-full rounded-full px-2 py-1 border border-teal-700 ' id='pass' type="password" name="pass" />
                             <div className="absolute right-2 top-2"><img ref={ref} className='w-4 cursor-pointer' onClick={showPass} src="/Eye1.png" alt="Eye" /></div>
                         </div>
