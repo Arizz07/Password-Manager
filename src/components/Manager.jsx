@@ -36,12 +36,12 @@ function Manager() {
     }, [])
 
     const showPass = () => {
-        if (ref.current.src.includes("/Password-Manager/Eye1.png")) {
-            ref.current.src = "/Password-Manager/EyeCross5.png"
+        if (ref.current.src.includes("/Eye1.png")) {
+            ref.current.src = "/EyeCross5.png"
             passRef.current.type = "text"
 
         } else {
-            ref.current.src = "/Password-Manager/Eye1.png"
+            ref.current.src = "/Eye1.png"
             passRef.current.type = "password"
 
         }
@@ -208,7 +208,7 @@ function Manager() {
                         <input placeholder='Enter Username ' value={form.user} onChange={handleChange} className='w-full rounded-full px-2 py-1 border border-teal-700 ' type="text" name="user" />
                         <div className='relative'>
                             <input ref={passRef} placeholder='Enter Password' value={form.pass} onChange={handleChange} className='w-full rounded-full px-2 py-1 border border-teal-700 ' id='pass' type="password" name="pass" />
-                            <div className="absolute right-2 top-2"><img ref={ref} className='w-4 cursor-pointer' onClick={showPass} src="/Password-Manager/Eye1.png" alt="Eye" /></div>
+                            <div className="absolute right-2 top-2"><img ref={ref} className='w-4 cursor-pointer' onClick={showPass} src="/Eye1.png" alt="Eye" /></div>
                         </div>
                     </div>
                     <div className='mx-2 my-4 flex justify-center items-center'>
